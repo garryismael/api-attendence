@@ -2,6 +2,7 @@ export class AttendanceEmployeeRequestDTO {
   id: number;
   firstName: string;
   lastName: string;
+  department: string;
 }
 
 export class AttendanceDateEmployeeRequestDTO {
