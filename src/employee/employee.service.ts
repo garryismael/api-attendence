@@ -15,8 +15,10 @@ export class EmployeeService {
   }
 
   async findOneById(id: number) {
-    return this.repository.findOneBy({
-      id,
+    return this.repository.findOne({
+      where: {
+        id,
+      },
     });
   }
 
