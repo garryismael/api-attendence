@@ -29,6 +29,7 @@ export class BulkCreateAttendanceUseCase {
         return await this.departmentService.findOrCreateByName(item.department);
       }),
     );
+
     await Promise.all(
       request.employees.map(async (item, index) => {
         return await this.createEmployee(item, departments, index);
@@ -39,6 +40,7 @@ export class BulkCreateAttendanceUseCase {
         return await this.createAttendanceDate(item);
       }),
     );
+    // TODO: Check If Employee is not null
     return await Promise.all(
       request.attendances.map(async (item, index) => {
         return await this.createAttendance(attendancesDates, index, item);
