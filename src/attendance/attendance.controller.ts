@@ -8,7 +8,7 @@ export class AttendanceController {
     private readonly bulkCreateUseCase: BulkCreateAttendanceUseCase,
   ) {}
 
-  @Post()
+  @Post('bulk-create')
   bulkSave(@Body() request: BulkAttendanceRequestDTO) {
     return this.bulkCreateUseCase.execute(request);
   }
