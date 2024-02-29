@@ -6,6 +6,8 @@ import config from './config';
 import { DbModule } from './db/db.module';
 import { EmployeeModule } from './employee/employee.module';
 import { AttendanceModule } from './attendance/attendance.module';
+import { DepartmentsModule } from './departments/departments.module';
+import { AttendanceDateModule } from './attendance-date/attendance-date.module';
 
 @Module({
   imports: [
@@ -14,8 +16,10 @@ import { AttendanceModule } from './attendance/attendance.module';
       isGlobal: true,
     }),
     DbModule,
+    DepartmentsModule,
     EmployeeModule,
     AttendanceModule,
+    AttendanceDateModule,
   ],
   controllers: [AppController],
   providers: [AppService],
