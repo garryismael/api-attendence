@@ -14,6 +14,12 @@ export class AttendanceService {
     return this.repository.save(attendance);
   }
 
+  async findOneById(id: number) {
+    return this.repository.findOneBy({
+      id,
+    });
+  }
+
   async findAll() {
     return this.repository.find({
       relations: ['employee', 'employee.department', 'date'],
@@ -22,5 +28,11 @@ export class AttendanceService {
 
   async bulkSave(attendances: Attendance[]) {
     return this.repository.save(attendances);
+  }
+
+  async deleteById(id: number) {
+    return this.repository.softDelete({
+      id,
+    });
   }
 }
