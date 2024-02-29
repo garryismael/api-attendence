@@ -15,7 +15,9 @@ export class AttendanceService {
   }
 
   async findAll() {
-    return this.repository.find();
+    return this.repository.find({
+      relations: ['employee', 'employee.department', 'date'],
+    });
   }
 
   async bulkSave(attendances: Attendance[]) {
