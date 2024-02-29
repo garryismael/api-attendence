@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import config from './config';
 import { DbModule } from './db/db.module';
 import { EmployeeModule } from './employee/employee.module';
+import { AttendanceModule } from './attendance/attendance.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { EmployeeModule } from './employee/employee.module';
     }),
     DbModule,
     EmployeeModule,
+    AttendanceModule,
   ],
   controllers: [AppController],
   providers: [AppService],
