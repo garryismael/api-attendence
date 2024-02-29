@@ -11,7 +11,10 @@ import {
 
 @Entity({ name: 'Employee' })
 export class Employee {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('identity', {
+    name: 'id',
+    generatedIdentity: 'BY DEFAULT',
+  })
   id: number;
 
   @Column()
