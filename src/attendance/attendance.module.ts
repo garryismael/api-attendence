@@ -7,6 +7,7 @@ import { AttendanceController } from './attendance.controller';
 import { Attendance } from './attendance.entity';
 import { AttendanceService } from './attendance.service';
 import { BulkCreateAttendanceUseCase } from './use-cases/bulk-create';
+import { FindAllAttendanceUseCase } from './use-cases/find-all';
 
 @Module({
   imports: [
@@ -15,7 +16,11 @@ import { BulkCreateAttendanceUseCase } from './use-cases/bulk-create';
     EmployeeModule,
     AttendanceDateModule,
   ],
-  providers: [AttendanceService, BulkCreateAttendanceUseCase],
+  providers: [
+    AttendanceService,
+    BulkCreateAttendanceUseCase,
+    FindAllAttendanceUseCase,
+  ],
   controllers: [AttendanceController],
 })
 export class AttendanceModule {}

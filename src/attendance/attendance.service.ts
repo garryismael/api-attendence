@@ -14,6 +14,10 @@ export class AttendanceService {
     return this.repository.save(attendance);
   }
 
+  async findAll() {
+    return this.repository.find();
+  }
+
   async bulkSave(attendances: Attendance[]) {
     return this.repository.save(attendances);
   }
