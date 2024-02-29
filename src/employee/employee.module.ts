@@ -8,6 +8,7 @@ import { CreateEmployeeUseCase } from './use-cases/create';
 @Module({
   imports: [TypeOrmModule.forFeature([Employee])],
   providers: [EmployeeService, CreateEmployeeUseCase],
+  exports: [EmployeeService],
   controllers: [EmployeeController],
 })
 export class EmployeeModule {}
