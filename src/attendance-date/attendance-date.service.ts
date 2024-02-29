@@ -10,9 +10,7 @@ export class AttendanceDateService {
     private repository: Repository<AttendanceDate>,
   ) {}
 
-  async save(date: Date) {
-    const attendanceDate = new AttendanceDate();
-    attendanceDate.date = date;
+  async save(attendanceDate: AttendanceDate) {
     return this.repository.save(attendanceDate);
   }
 }
