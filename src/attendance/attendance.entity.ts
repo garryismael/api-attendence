@@ -8,7 +8,7 @@ import {
   JoinTable,
 } from 'typeorm';
 
-@Entity({ name: 'AttendanceEmployee ' })
+@Entity({ name: 'AttendanceEmployee' })
 export class Attendance {
   @PrimaryGeneratedColumn()
   id: number;
