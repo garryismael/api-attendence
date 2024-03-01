@@ -39,8 +39,8 @@ export class AttendanceController {
     return this.bulkCreateUseCase.execute(request);
   }
 
-  @Delete()
-  delete(id: number) {
+  @Delete(':id')
+  delete(@Param('id') id: number) {
     return this.deleteUseCase.execute(id);
   }
 }
