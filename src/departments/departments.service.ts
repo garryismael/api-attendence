@@ -36,6 +36,12 @@ export class DepartmentService {
     return await this.repository.save(department);
   }
 
+  findOneById(id: number) {
+    return this.repository.findOneBy({
+      id,
+    });
+  }
+
   async deleteById(id: number) {
     return await this.repository.softDelete({ id });
   }
