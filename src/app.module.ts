@@ -1,13 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AttendanceDateModule } from './attendance-date/attendance-date.module';
+import { AttendanceModule } from './attendance/attendance.module';
 import config from './config';
 import { DbModule } from './db/db.module';
-import { EmployeeModule } from './employee/employee.module';
-import { AttendanceModule } from './attendance/attendance.module';
 import { DepartmentsModule } from './departments/departments.module';
-import { AttendanceDateModule } from './attendance-date/attendance-date.module';
+import { EmployeeModule } from './employee/employee.module';
 
 @Module({
   imports: [
@@ -21,7 +20,6 @@ import { AttendanceDateModule } from './attendance-date/attendance-date.module';
     AttendanceModule,
     AttendanceDateModule,
   ],
-  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
