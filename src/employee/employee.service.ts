@@ -11,7 +11,9 @@ export class EmployeeService {
   ) {}
 
   async findAll() {
-    return this.repository.find();
+    return this.repository.find({
+      relations: ['department'],
+    });
   }
 
   async findOneById(id: number) {
@@ -19,6 +21,7 @@ export class EmployeeService {
       where: {
         id,
       },
+      relations: ['department'],
     });
   }
 
