@@ -16,4 +16,10 @@ export class BulkAttendanceRequestDTO {
   attendances: Array<AttendanceDateEmployeeRequestDTO>;
 }
 
+export class AttendanceRequestDTO {
+  employeeId: number;
+  date: string;
+  present: boolean;
+}
+
 export class AttendanceResponseDTO {}
