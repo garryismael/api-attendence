@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { FindDepartmentsUseCase } from './use-cases/find-all';
 import { FindOneDepartmentUseCase } from './use-cases/find-one';
 import { ApiTags } from '@nestjs/swagger';
@@ -15,7 +15,7 @@ export class DepartmentsController {
   ) {}
 
   @Post()
-  create(request: DepartmentRequestDTO) {
+  create(@Body() request: DepartmentRequestDTO) {
     return this.createUseCase.execute(request);
   }
 
