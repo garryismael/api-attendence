@@ -9,6 +9,8 @@ import { AttendanceService } from './attendance.service';
 import { BulkCreateAttendanceUseCase } from './use-cases/bulk-create';
 import { FindAllAttendanceUseCase } from './use-cases/find-all';
 import { DeleteAttendanceUseCase } from './use-cases/delete';
+import { FindOneAttendanceUseCase } from './use-cases/find-one';
+import { CreateAttendanceUseCase } from './use-cases/create';
 
 @Module({
   imports: [
@@ -22,6 +24,8 @@ import { DeleteAttendanceUseCase } from './use-cases/delete';
     BulkCreateAttendanceUseCase,
     FindAllAttendanceUseCase,
     DeleteAttendanceUseCase,
+    FindOneAttendanceUseCase,
+    CreateAttendanceUseCase,
   ],
   controllers: [AttendanceController],
 })
