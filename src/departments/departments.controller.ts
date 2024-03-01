@@ -18,6 +18,7 @@ export class DepartmentsController {
   create(request: DepartmentRequestDTO) {
     return this.createUseCase.execute(request);
   }
+
   @Get()
   findAll() {
     return this.findUseCase.execute();
