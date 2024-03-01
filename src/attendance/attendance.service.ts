@@ -15,8 +15,11 @@ export class AttendanceService {
   }
 
   async findOneById(id: number) {
-    return this.repository.findOneBy({
-      id,
+    return this.repository.findOne({
+      where: {
+        id,
+      },
+      relations: ['employee', 'employee.department', 'date'],
     });
   }
 
