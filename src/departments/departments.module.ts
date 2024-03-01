@@ -5,6 +5,7 @@ import { Department } from './department.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FindDepartmentsUseCase } from './use-cases/find-all';
 import { FindOneDepartmentUseCase } from './use-cases/find-one';
+import { CreateDepartmentsUseCase } from './use-cases/create';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Department])],
@@ -13,6 +14,7 @@ import { FindOneDepartmentUseCase } from './use-cases/find-one';
     DepartmentService,
     FindDepartmentsUseCase,
     FindOneDepartmentUseCase,
+    CreateDepartmentsUseCase,
   ],
   controllers: [DepartmentsController],
 })
