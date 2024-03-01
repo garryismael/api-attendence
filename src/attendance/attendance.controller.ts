@@ -8,8 +8,10 @@ import { FindAllAttendanceUseCase } from './use-cases/find-all';
 import { DeleteAttendanceUseCase } from './use-cases/delete';
 import { FindOneAttendanceUseCase } from './use-cases/find-one';
 import { CreateAttendanceUseCase } from './use-cases/create';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('attendances')
+@ApiTags('Attendances')
 export class AttendanceController {
   constructor(
     private readonly bulkCreateUseCase: BulkCreateAttendanceUseCase,

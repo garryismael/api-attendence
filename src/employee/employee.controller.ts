@@ -13,8 +13,10 @@ import { DeleteEmployeeUseCase } from './use-cases/delete';
 import { FindAllEmployeeUseCase } from './use-cases/find';
 import { FindOneEmployeeUseCase } from './use-cases/find-one';
 import { UpdateEmployeeUseCase } from './use-cases/update';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('employees')
+@ApiTags('Employees')
 export class EmployeeController {
   constructor(
     private createUseCase: CreateEmployeeUseCase,
