@@ -1,12 +1,51 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { EmployeeRequestDTO } from './employee.dto';
 import { CreateEmployeeUseCase } from './use-cases/create';
+import { DeleteEmployeeUseCase } from './use-cases/delete';
+import { FindAllEmployeeUseCase } from './use-cases/find';
+import { FindOneEmployeeUseCase } from './use-cases/find-one';
+import { UpdateEmployeeUseCase } from './use-cases/update';
 
 @Controller('employees')
 export class EmployeeController {
-  constructor(private createUseCase: CreateEmployeeUseCase) {}
+  constructor(
+    private createUseCase: CreateEmployeeUseCase,
+    private deleteUseCase: DeleteEmployeeUseCase,
+    private findOneUseCase: FindOneEmployeeUseCase,
+    private findUseCase: FindAllEmployeeUseCase,
+    private updateUseCase: UpdateEmployeeUseCase,
+  ) {}
+
   @Post()
-  async create(@Body() request: EmployeeRequestDTO) {
-    return await this.createUseCase.execute(request);
+  create(@Body() request: EmployeeRequestDTO) {
+    return this.createUseCase.execute(request);
+  }
+
+  @Delete(':id')
+  delete(@Param('id') id: number) {
+    return this.deleteUseCase.execute(id);
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: number) {
+    return this.findOneUseCase.execute(id);
+  }
+
+  @Get()
+  findAll() {
+    return this.findUseCase.execute();
+  }
+
+  @Put(':id')
+  update(@Param('id') id: number, request: EmployeeRequestDTO) {
+    return this.updateUseCase.execute(id, request);
   }
 }
