@@ -21,9 +21,13 @@ export class AttendanceDateEmployeeRequestDTO {
 }
 
 export class BulkAttendanceRequestDTO {
-  @ApiProperty()
+  @ApiProperty({
+    type: Array<AttendanceEmployeeRequestDTO>,
+  })
   employees: Array<AttendanceEmployeeRequestDTO>;
-  @ApiProperty()
+  @ApiProperty({
+    type: Array<AttendanceDateEmployeeRequestDTO>,
+  })
   attendances: Array<AttendanceDateEmployeeRequestDTO>;
 }
 
