@@ -6,7 +6,7 @@ export class Department {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ unique: true })
+  @Column()
   name: string;
 
   @OneToMany(() => Employee, (employee) => employee.department)
