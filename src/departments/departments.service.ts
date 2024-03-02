@@ -12,7 +12,7 @@ export class DepartmentService {
 
   async findOrCreateByName(name: string) {
     let department = await this.findOneByName(name);
-    if (!department) {
+    if (department == null) {
       department = new Department();
       department.name = name;
       return await this.save(department);
